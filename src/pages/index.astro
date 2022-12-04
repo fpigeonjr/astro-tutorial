@@ -1,18 +1,37 @@
 ---
+const pageTitle = "Home Page"
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<a href="/">Home</a>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon.svg"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width"
+    />
+    <meta
+      name="generator"
+      content={Astro.generator}
+    />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <a href="/">Home</a>
     <a href="/about/">About</a>
     <a href="/blog/">Blog</a>
-		<h1>Hello World</h1>
-	</body>
+    <h1>{pageTitle}</h1>
+    <p>
+      Squid cold-pressed big mood fit godard hell of. Hammock fingerstache ennui pok pok succulents
+      unicorn DIY typewriter pop-up. Yuccie 8-bit bicycle rights, salvia praxis typewriter
+      microdosing hoodie subway tile pug intelligentsia pabst tattooed freegan. Roof party bodega
+      boys shoreditch intelligentsia readymade. Readymade slow-carb live-edge blog fashion axe tbh
+      actually sriracha flexitarian authentic DSA paleo. Squid tbh chambray, snackwave slow-carb
+      vinyl umami tousled sustainable semiotics hella four loko tilde.
+    </p>
+  </body>
 </html>
