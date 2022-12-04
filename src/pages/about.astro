@@ -1,4 +1,5 @@
 ---
+import "../styles/global.css"
 const pageTitle = "About Me"
 const identity = {
   firstName: "Frank",
@@ -34,10 +35,6 @@ const textCase = "upperCase"
     />
     <title>{pageTitle}</title>
     <style define:vars={{ skillColor, fontWeight, fontSize, textCase }}>
-      h1 {
-        color: purple;
-        font-size: 4rem;
-      }
       .skill {
         color: var(--skillColor);
         font-weight: var(--fontWeight);
