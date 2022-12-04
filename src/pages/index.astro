@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css"
+import Navigation from "../components/Navigation.astro"
+import Footer from "../components/Footer.astro"
 const pageTitle = "Home Page"
 ---
 
@@ -22,9 +24,7 @@ const pageTitle = "Home Page"
     <title>{pageTitle}</title>
   </head>
   <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
+    <Navigation />
     <h1>{pageTitle}</h1>
     <p>
       Squid cold-pressed big mood fit godard hell of. Hammock fingerstache ennui pok pok succulents
@@ -34,5 +34,6 @@ const pageTitle = "Home Page"
       actually sriracha flexitarian authentic DSA paleo. Squid tbh chambray, snackwave slow-carb
       vinyl umami tousled sustainable semiotics hella four loko tilde.
     </p>
+    <Footer />
   </body>
 </html>
