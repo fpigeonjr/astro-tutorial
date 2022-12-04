@@ -1,35 +1,30 @@
 ---
+import Social from "./Social.astro"
 const platforms = ["github", "linkedIn", "twitter"]
 const username = "fpigeonjr"
 ---
 
 <footer>
-  <p>
-    Learn more about my projects on
-    {
-      platforms.map(
-        (platform) =>
-          (
-            <a
-              class="social-link"
-              href={`https://www.${platform}.com/${username}`}
-            >
-              {platform}
-            </a>
-          )!
-      )
-    }
-  </p>
+  Learn more about my projects on
+  {
+    platforms.map(
+      (platform) =>
+        (
+          <Social
+            class="social-link"
+            platform={platform}
+            username={username}
+          />
+        )!
+    )
+  }
 </footer>
 
 <style>
   footer {
-    padding: 0.5rem;
-    background-color: rebeccapurple;
-    color: white;
-  }
-  .social-link {
-    color: white;
-    margin-left: 0.5rem;
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    align-items: center;
   }
 </style>
