@@ -1,7 +1,5 @@
 ---
-import "../styles/global.css"
-import Header from "../components/Header.astro"
-import Footer from "../components/Footer.astro"
+import BaseLayout from "../layouts/BaseLayout.astro"
 const pageTitle = "About Me"
 const identity = {
   firstName: "Frank",
@@ -19,62 +17,41 @@ const fontSize = "1.5rem"
 const textCase = "upperCase"
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/favicon.svg"
-    />
-    <meta
-      name="viewport"
-      content="width=device-width"
-    />
-    <meta
-      name="generator"
-      content={Astro.generator}
-    />
-    <title>{pageTitle}</title>
-    <style define:vars={{ skillColor, fontWeight, fontSize, textCase }}>
-      .skill {
-        color: var(--skillColor);
-        font-weight: var(--fontWeight);
-        font-size: var(--fontSize);
-        text-transform: var(--textCase);
-      }
-    </style>
-  </head>
-  <body>
-    <Header />
-    <h1>{pageTitle}</h1>
-    <h2>Fun Facts</h2>
-    <ul>
-      <li>My name is {identity.firstName}</li>
-      <li>I grew up in {identity.country}</li>
-      <li>My day job is a {identity.occupation}</li>
-      {
-        identity.hobbies.length > 2 ? (
-          <li>
-            Two of my hobbies are {identity.hobbies[0]} and {identity.hobbies[1]}
-          </li>
-        ) : (
-          <li> Sike I don't have any hobbies</li>
-        )
-      }
-    </ul>
-    <h2>Skills I possess</h2>
-    <ul>
-      {skills.map((skill) => <li class="skill">{skill}</li>)}
-    </ul>
-    <p>I am working through Astro's intro tutorial. This is the second page on the website</p>
-    <p>
-      This site will update as I complete more of the tutorial, so keep checking back and see how my
-      journey is going!
-    </p>
-    {happy && <p>I am happy to be learning Astro</p>}
-    {finished && <p>I am finished with the tutorial</p>}
-    {goal === 3 ? <p>My goal is to finish in 3 days. </p> : <p>My goal is to finish in 5 days. </p>}
-    <Footer />
-  </body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+  <h2>Fun Facts</h2>
+  <ul>
+    <li>My name is {identity.firstName}</li>
+    <li>I grew up in {identity.country}</li>
+    <li>My day job is a {identity.occupation}</li>
+    {
+      identity.hobbies.length > 2 ? (
+        <li>
+          Two of my hobbies are {identity.hobbies[0]} and {identity.hobbies[1]}
+        </li>
+      ) : (
+        <li> Sike I don't have any hobbies</li>
+      )
+    }
+  </ul>
+  <h2>Skills I possess</h2>
+  <ul>
+    {skills.map((skill) => <li class="skill">{skill}</li>)}
+  </ul>
+  <p>I am working through Astro's intro tutorial. This is the second page on the website</p>
+  <p>
+    This site will update as I complete more of the tutorial, so keep checking back and see how my
+    journey is going!
+  </p>
+  {happy && <p>I am happy to be learning Astro</p>}
+  {finished && <p>I am finished with the tutorial</p>}
+  {goal === 3 ? <p>My goal is to finish in 3 days. </p> : <p>My goal is to finish in 5 days. </p>}
+</BaseLayout>
+
+<style define:vars={{ skillColor, fontWeight, fontSize, textCase }}>
+  .skill {
+    color: var(--skillColor);
+    font-weight: var(--fontWeight);
+    font-size: var(--fontSize);
+    text-transform: var(--textCase);
+  }
+</style>
