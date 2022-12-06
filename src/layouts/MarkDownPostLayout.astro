@@ -1,0 +1,26 @@
+---
+const { frontmatter } = Astro.props
+---
+
+<h1>{frontmatter.title}</h1>
+<p>Written by {frontmatter.author}</p>
+<p>Published on: {frontmatter.pubDate.slice(0, 10)}</p>
+<p>
+  tags: {frontmatter.tags.map((tag) => <span>{tag}</span>)}
+</p>
+<p><em>{frontmatter.description}</em></p>
+<img
+  src={frontmatter.image.url}
+  width="300"
+  alt={frontmatter.image.alt}
+/>
+<slot />
+<slot />
+
+<style>
+  span {
+    background-color: #eee;
+    padding: 0.5rem;
+    margin: 0.5rem;
+  }
+</style>
