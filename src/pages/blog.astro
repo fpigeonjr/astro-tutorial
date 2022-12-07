@@ -1,16 +1,19 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
+import BlogPost from "../components/BlogPost.astro"
 const pageTitle = "Posts"
 const allPosts = await Astro.glob("../pages/posts/*.md")
 ---
 
 <BaseLayout pageTitle={pageTitle}>
+  <!-- {(<pre>{JSON.stringify(allPosts, null, 2)}</pre>)} -->
   <ul>
     {
       allPosts.map((post) => (
-        <li>
-          <a href={post.url}>{post.frontmatter.title}</a>
-        </li>
+        <BlogPost
+          url={post.url}
+          title={post.frontmatter.title}
+        />
       ))
     }
   </ul>
